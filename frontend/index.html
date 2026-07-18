@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposal Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+      <div class="header-badge">
+        <span class="badge-dot"></span>
+        Proposal Agent v1.0
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <p class="hero-eyebrow">AI Agent Pipeline</p>
+      <h1 class="hero-title">Client Brief <span class="hero-arrow">→</span> Proposal Draft</h1>
+      <p class="hero-sub">4-stage agentic workflow: Extract → Match → Generate → Review</p>
+    </section>
+
+
+    <!-- INPUT SECTION -->
+    <section class="input-section">
+      <div class="input-card">
+        <div class="input-header">
+          <span class="input-label">CLIENT BRIEF INPUT</span>
+          <button class="btn-sample" onclick="loadSample()">Load Sample Brief</button>
+        </div>
+        <textarea
+          id="brief-input"
+          class="brief-textarea"
+          placeholder="Paste or type the client brief here...
+
+Example: We are ABC Tech Solutions, a fintech startup based in Dubai. We need a mobile app and website for our payment platform. Budget is around AED 80,000. We need it live within 3 months. Key features: user authentication, payment processing, transaction history, admin dashboard, and push notifications."
+          rows="10"
+        ></textarea>
+        <div class="input-footer">
+          <span class="char-count" id="char-count">0 / 5000</span>
+          <button class="btn-generate" id="generate-btn" onclick="generateProposal()">
+            <span class="btn-icon">⚡</span>
+            Generate Proposal
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOADING STATE -->
+    <section class="loading-section" id="loading-section" style="display:none;">
+      <div class="loading-card">
+        <div class="loading-pipeline">
+          <div class="loading-step" id="loading-1">
+            <div class="loading-spinner"></div>
+            <span>Extracting brief data...</span>
+          </div>
+          <div class="loading-step inactive" id="loading-2">
+            <div class="loading-spinner"></div>
+            <span>Matching services & pricing...</span>
+          </div>
+          <div class="loading-step inactive" id="loading-3">
+            <div class="loading-spinner"></div>
+            <span>Generating proposal draft...</span>
+          </div>
+          <div class="loading-step inactive" id="loading-4">
+            <div class="loading-spinner"></div>
+            <span>Flagging for human review...</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section class="results-section" id="results-section" style="display:none;">
+
+      <!-- STATUS BANNER -->
+      <div class="status-banner" id="status-banner">
+        <div class="status-icon">⚠️</div>
+        <div class="status-content">
+          <div class="status-title">PENDING HUMAN REVIEW</div>
+          <div class="status-desc" id="status-desc">This proposal requires manager approval before sending to client.</div>
+        </div>
+        <div class="status-meta" id="status-meta"></div>
+      </div>
+
+      <!-- TABS -->
+      <div class="tabs">
+        <button class="tab active" onclick="showTab('proposal')">📄 Proposal Draft</button>
+        <button class="tab" onclick="showTab('extracted')">🔍 Extracted Data</button>
+        <button class="tab" onclick="showTab('services')">💰 Matched Services</button>
+        <button class="tab" onclick="showTab('log')">📋 Activity Log</button>
+        <button class="tab" onclick="showTab('review')">✅ Review Checklist</button>
+      </div>
+
+      <!-- TAB: PROPOSAL -->
+      <div class="tab-content active" id="tab-proposal">
+        <div class="proposal-toolbar">
+          <span class="proposal-meta" id="proposal-meta"></span>
+          <button class="btn-copy" onclick="copyProposal()">📋 Copy Proposal</button>
+        </div>
+        <div class="proposal-output" id="proposal-output"></div>
+      </div>
+
+      <!-- TAB: EXTRACTED DATA -->
+      <div class="tab-content" id="tab-extracted">
+        <div class="json-viewer" id="extracted-output"></div>
+      </div>
+
+      <!-- TAB: MATCHED SERVICES -->
+      <div class="tab-content" id="tab-services">
+        <div id="services-output"></div>
+      </div>
+
+      <!-- TAB: ACTIVITY LOG -->
+      <div class="tab-content" id="tab-log">
+        <div class="log-table-wrapper">
+          <table class="log-table">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Node</th>
+                <th>Input</th>
+                <th>Output</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="log-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TAB: REVIEW CHECKLIST -->
+      <div class="tab-content" id="tab-review">
+        <div class="checklist-card" id="checklist-output"></div>
+      </div>
+
+    </section>
+
+    <!-- ERROR SECTION -->
+    <div class="error-banner" id="error-banner" style="display:none;">
+      <span class="error-icon">✗</span>
+      <span id="error-message"></span>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>Elchai AI Proposal Agent</span>
+      <span class="footer-divider">·</span>
+      <span>Built by Shreya Sanjay</span>
+      <span class="footer-divider">·</span>
+      <span class="footer-watermark">Confidential — Assessment Submission Only</span>
+    </div>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
