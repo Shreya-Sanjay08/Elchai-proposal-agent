@@ -32,23 +32,6 @@ Research Intern pre-interview assessment.**
 
 ---
 
-## 📁 Project Structure
-
-```
-elchai-proposal-agent/
-├── backend/
-│   ├── main.py          # FastAPI server + agent logic
-│   ├── requirements.txt # Python dependencies
-│   └── .env.example     # Environment variables template
-├── frontend/
-│   ├── index.html       # Main dashboard
-│   ├── style.css        # UI styling
-│   └── app.js           # Frontend logic
-└── README.md
-```
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
