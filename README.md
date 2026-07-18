@@ -1,8 +1,7 @@
-# 🤖 Elchai Proposal Agent
+# Elchai Proposal Agent
 
 > Multi-agent AI pipeline that converts unstructured client briefs 
-> into structured, legally-defensible business proposals — 
-> with mandatory Human-in-the-Loop review gates.
+> into structured, legally-defensible business proposals.
 
 **Built as part of the Elchai Group AI Agent & OpenClaw 
 Research Intern pre-interview assessment.**
