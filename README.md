@@ -11,38 +11,7 @@ Research Intern pre-interview assessment.**
 
 ## 📹 Demo
 
-🎥 [Watch Full System Demo](your-google-drive-link-here)
-
----
-
-## 🏗️ System Architecture
-
-```
-[Raw Client Brief Input]
-         │
-         ▼
-[Node 1: Extraction Agent]
-Parses scope, budget, deadline, 
-requirements from unstructured text
-         │
-         ▼
-[Node 2: Service Matcher Agent]
-Matches requirements against company 
-catalogue using constrained RAG logic
-         │
-         ▼
-[Node 3: Proposal Composer Agent]
-Generates formal structured proposal
-with payment milestones and timelines
-         │
-         ▼
-[Human-in-the-Loop Review Gate]
-⚠️ PENDING HUMAN REVIEW
-All proposals flagged before delivery
-         │
-         ▼
-[Final Proposal Output + Activity Log]
-```
+🎥 [Watch Full System Demo]([your-google-drive-link-here](https://drive.google.com/drive/folders/18FKe99tvuxQc205v4QvlVE_l37pAvzMW?usp=drive_link))
 
 ---
 
