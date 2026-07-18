@@ -8,12 +8,6 @@ Research Intern pre-interview assessment.**
 
 ---
 
-## 📹 Demo
-
-🎥 [Watch Full System Demo]([your-google-drive-link-here](https://drive.google.com/drive/folders/18FKe99tvuxQc205v4QvlVE_l37pAvzMW?usp=drive_link))
-
----
-
 ## ✨ Features
 
 - **Multi-agent pipeline** — 3 specialised AI nodes working sequentially
